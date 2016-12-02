@@ -23,10 +23,9 @@ var plugins = [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('css/[name].css'),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
+    new webpack.DefinePlugin({
+        ENV: 'prod',
+        CODE_ENV: 1
     })
 ];
 
@@ -58,8 +57,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js?$/, loaders: ['babel'], exclude: /node_modules/ },
-            { test: /\.scss$/i, loader: ExtractTextPlugin.extract(['css?modules', 'sass']) },
-            { test: /\.css$/i, loader: ExtractTextPlugin.extract(['css?modules']) }, {
+            { test: /\.scss$/i, loader: ExtractTextPlugin.extract(['css', 'sass']) },
+            { test: /\.css$/i, loader: ExtractTextPlugin.extract(['css']) }, {
                 test: /\.json$/,
                 loader: 'json'
             }, {

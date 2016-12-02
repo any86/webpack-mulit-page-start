@@ -27,6 +27,7 @@ mkdirdeep('src/scss');
 mkdirdeep('src/font');
 mkdirdeep('src/img');
 mkdirdeep('src/view');
+mkdirdeep('src/vendor');
 
 // 生成相关文件
 var entry = (view_config) => {
@@ -48,6 +49,16 @@ var entry = (view_config) => {
 
         if (!fs.existsSync(file_path_noext + '.js')) {
             fs.writeFileSync(file_path_noext + '.js', js_str);
+        }
+
+        // html中的js
+        var js_in_html_str = '//定义模块的所变量'+_rn+'exports = {' +_rn+ '}';
+        if (!fs.existsSync(file_path_noext + '.in_html_for_dev.js')) {
+            fs.writeFileSync(file_path_noext + '.in_html_for_dev.js', js_in_html_str);
+        }
+
+        if (!fs.existsSync(file_path_noext + '.in_html_for_build.js')) {
+            fs.writeFileSync(file_path_noext + '.in_html_for_build.js', js_in_html_str);
         }
     }
     // 创建html文件及内容
@@ -73,7 +84,7 @@ var entry = (view_config) => {
             '</head>' + _rn +
             '<body>' +
             com_str +
-            '   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>'+ _rn +
+            '   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>'+ _rn + ' '
             '</body>' + _rn +
             '</html>';
         // if (!fs.existsSync('./src/view/' + opts.name + '.html')) {

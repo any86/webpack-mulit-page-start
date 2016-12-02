@@ -22,7 +22,11 @@ var plugins = [
     // Webpack 2.0 fixed this mispelling 
     // new webpack.optimize.OccurrenceOrderPlugin(), 
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+        ENV: 'dev',
+        CODE_ENV: 0
+    })
 ];
 
 get_entry('./src/js/', entry => {

@@ -31,6 +31,8 @@ app.use(devMiddleware)
 // compilation error display
 app.use(hotMiddleware)
 
+app.use('/mock', express.static('./mock'));
+
 module.exports = app.listen(port, function(err) {
     if (err) {
         console.log(err)

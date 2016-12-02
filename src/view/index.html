@@ -8,12 +8,15 @@
 <head>
    <meta charset="UTF-8">
    <title>index</title>
+   var Data = {
+	   a: ${JSON.stringify(require('../components/a/a.in_html.js')())
+	   }
 </head>
 <body>
     ${require('../components/a/a.html')}
     ${require('../components/b/b.html')}
     ${require('../components/c/c.html')}
     ${require('../components/d/d.html')}
-   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
+   	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
 </body>
 </html>
