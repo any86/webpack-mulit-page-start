@@ -1,0 +1,37 @@
+{
+  "name": "webpackMulitSeed",
+  "version": "1.0.0",
+  "description": "webpack多页面脚手架",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "test": ""
+  },
+  "author": "Ning",
+  "license": "ISC",
+  "dependencies": {
+    "assets-webpack-plugin": "^3.5.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "css-loader": "^0.26.0",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.13.0",
+    "opn": "^4.0.2",
+    "ora": "^0.3.0",
+    "sass-loader": "^4.0.2",
+    "shelljs": "^0.7.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-merge": "^0.18.0"
+  }
+}
