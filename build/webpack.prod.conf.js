@@ -6,14 +6,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 遍历html, 生成入口名
 var get_entry = function(dir, cb) {
-    fs.readdirSync(dir).forEach(function(file) {
-        var pathname = path.join(dir, file);
-        if (fs.statSync(pathname).isFile() && -1 < file.indexOf('js')) {
-            cb(file.replace('.js', ''));
-        }
-    });
-}
-// 生成入口
+        fs.readdirSync(dir).forEach(function(file) {
+            var pathname = path.join(dir, file);
+            if (fs.statSync(pathname).isFile() && -1 < file.indexOf('js')) {
+                cb(file.replace('.js', ''));
+            }
+        });
+    }
+    // 生成入口
 var entrys = {}
 var plugins = [
     // Webpack 1.0 
@@ -21,7 +21,13 @@ var plugins = [
     // Webpack 2.0 fixed this mispelling 
     // new webpack.optimize.OccurrenceOrderPlugin(), 
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('css/[name].css'),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    })
 ];
 
 get_entry('./src/js/', entry => {
