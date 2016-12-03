@@ -4,6 +4,22 @@
      npm i  
 
 + 第2步，安装完成后，配置init.config.js
+```javascript
+module.exports = {
+	view: {
+	    index: {
+	        components: ['header', 'banner', 'footer'],
+	    },
+	    list: {
+	        components: ['header','list', 'footer']
+	    }		
+	},
+	cdn: {
+		css: [],
+		js: ['http://libs.baidu.com/jquery/1.11.1/jquery.js', "http://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.css"]
+	}
+};
+```
 
 ####编辑安装脚本, 编辑init.config.js
 ####安装完毕,自动创建项目结构: node init
