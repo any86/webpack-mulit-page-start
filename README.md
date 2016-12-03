@@ -1,7 +1,9 @@
 #基于webpack的多页脚手架
 + 第1步, 安装所需插件  
 
-     npm i  
+     `npm i `   
+     
+     
 
 + 第2步，安装完成后，配置init.config.js
 
