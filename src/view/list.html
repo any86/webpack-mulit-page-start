@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta name="description" content="描述" />
+<meta name="keyword" content="关键词" />
+<head>
+   <meta charset="UTF-8">
+   <title>list</title>
+   <script>
+var _Data = {
+header: ${JSON.stringify(require('../components/header/header.in.html.js')())},
+list: ${JSON.stringify(require('../components/list/list.in.html.js')())},
+footer: ${JSON.stringify(require('../components/footer/footer.in.html.js')())},
+}
+
+</script>
+</head>
+<body>
+    ${require('../components/header/header.html')}
+    ${require('../components/list/list.html')}
+    ${require('../components/footer/footer.html')}
+   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.css"></script></body>
+</html>

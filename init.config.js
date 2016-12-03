@@ -1,13 +1,10 @@
 module.exports = {
 	view: {
 	    index: {
-	        components: ['header', 'body', 'footer'],
-	    },
-	    sch: {
-	        components: ['header', 'footer']
+	        components: ['header', 'banner', 'footer'],
 	    },
 	    list: {
-	        components: ['header', 'footer']
+	        components: ['header','list', 'footer']
 	    }		
 	},
 	cdn: {
