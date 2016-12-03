@@ -1,17 +1,7 @@
 #基于webpack的多页脚手架
 + 第1步, 安装所需插件  
 
-     npm i  
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+     npm i    
 
 + 第2步，安装完成后，配置init.config.js
 
@@ -32,10 +22,9 @@ module.exports = {
 };
 ```
 
+    view下的'index'和'list'代表要生成的页面名字，初始化后会自动生成相应的js/css/html  
 
-view下的'index'和'list'代表要生成的页面名字，初始化后会自动生成相应的js/css/html  
-
-cnd中可以配置在html中引入的第三方文件地址
+    cnd中可以配置在html中引入的第三方文件地址
 
 + 第3步，运行初始化命令, node init  
 
