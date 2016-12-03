@@ -1,4 +1,4 @@
-var view_config = require('./init.config.js');
+var config = require('./init.config.js');
 
 // 初始化文件
 var path = require('path');
@@ -30,6 +30,7 @@ mkdirdeep('src/view');
 mkdirdeep('src/vendor');
 
 // 生成相关文件
+var view_config = config.view;
 var entry = (view_config) => {
     var create_component = (opts) => {
 
@@ -51,26 +52,49 @@ var entry = (view_config) => {
             fs.writeFileSync(file_path_noext + '.js', js_str);
         }
 
-        // html中的js
-        var js_in_html_str = '//定义模块的所变量'+_rn+'exports = {' +_rn+ '}';
-        if (!fs.existsSync(file_path_noext + '.in_html_for_dev.js')) {
-            fs.writeFileSync(file_path_noext + '.in_html_for_dev.js', js_in_html_str);
+        // in.html的js
+        var js_in_html_str = '//定义模块的所变量' + _rn +
+        'module.exports = function() {'+ _rn +
+        '    if (0 == CODE_ENV) {'+ _rn +
+        '        //dev阶段, mock数据'+ _rn +
+        '        return {}'+ _rn +
+        '    } else {'+ _rn +
+        '        //build阶段, 上线数据'+ _rn +
+        '        return {}'+ _rn +
+        '    }'+ _rn +
+        '}';
+
+        if (!fs.existsSync(file_path_noext + '.in.html.js')) {
+            fs.writeFileSync(file_path_noext + '.in.html.js', js_in_html_str);
         }
 
-        if (!fs.existsSync(file_path_noext + '.in_html_for_build.js')) {
-            fs.writeFileSync(file_path_noext + '.in_html_for_build.js', js_in_html_str);
-        }
     }
     // 创建html文件及内容
     var create_html = (opts) => {
+
+        // html中引入com的字符串
         var com_str = _rn;
+        // js in html
+        var str_require_htmljs = 'var _Data = {'+_rn;
+
         view_config[opts.name].components.forEach(name => {
+
+            str_require_htmljs+= name + ': ${JSON.stringify(require(\'../components/'+name+'/'+name+'.in.html.js\')())},'+_rn;
+
             // 引入组件文件
             com_str += '    ${require(\'../components/' + name + '/' + name + '.html\')}' + _rn;
             // 生成组件文件
             create_component({ name: name });
         });
+        str_require_htmljs+= '}'+_rn;
 
+        var cdn_js_str = [];
+        config.cdn.js.forEach(url=>{
+            cdn_js_str.push('   <script src="'+url+'"></script>');
+        })
+        cdn_js_str = cdn_js_str.join(_rn);
+
+        // html view template
         var str = '<!DOCTYPE html>' + _rn +
             '<html>' + _rn +
             '<meta charset="utf-8" />' + _rn +
@@ -81,10 +105,10 @@ var entry = (view_config) => {
             '<head>' + _rn +
             '   <meta charset="UTF-8">' + _rn +
             '   <title>' + opts.name + '</title>' + _rn +
+            '   <script>' + _rn + str_require_htmljs + _rn + '</script>'+ _rn +
             '</head>' + _rn +
-            '<body>' +
-            com_str +
-            '   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>'+ _rn + ' '
+            '<body>' + com_str +
+            cdn_js_str+
             '</body>' + _rn +
             '</html>';
         // if (!fs.existsSync('./src/view/' + opts.name + '.html')) {
