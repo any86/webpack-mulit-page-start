@@ -49,6 +49,9 @@ src
 ####开发阶段: npm run dev
 ####编译阶段: npm run build  
 
+####关于mock   
+
+项目下的mock文件夹已经搭建了静态服务器，根据项目自行放入相应的json文件即可，访问地址localhost:8080/mock/xx.json   
 
 ####注意说明：
 
