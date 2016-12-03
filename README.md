@@ -4,8 +4,7 @@
      npm i  
 
 + 第2步，安装完成后，配置init.config.js
-```javascript
-module.exports = {
+	module.exports = {
 	view: {
 	    index: {
 	        components: ['header', 'banner', 'footer'],
@@ -19,7 +18,6 @@ module.exports = {
 		js: ['http://libs.baidu.com/jquery/1.11.1/jquery.js']
 	}
 };
-` ``   
 view下的'index'和'list'代表要生成的页面名字，初始化后会自动生成相应的js/css/html  
 
 cnd中可以配置在html中引入的第三方文件地址
