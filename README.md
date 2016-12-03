@@ -22,9 +22,13 @@ module.exports = {
 };
 ```
 
-> view下的'index'和'list'代表要生成的页面名字，初始化后会自动生成相应的js/css/html  
+*建议先用例子直接生成一次项目，然后观察下目录结构命名就了解了没个字段的含义  
+view代表每个页面
+components代表当前页面引入了那些组件(组件包含html/js/scss)
+cdn的配置会直接引入到页面底部
 
-> cnd中可以配置在html中引入的第三方文件地址
+
+
 
 + 第3步，运行初始化命令, node init  
 
