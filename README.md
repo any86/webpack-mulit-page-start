@@ -28,14 +28,15 @@ module.exports = {
 ###第3步，运行初始化命令, node init  
 
 自动生成项目目录结构:
-  src
+```
+src
     commponents
     js
     scss
     view
     font
     vendor
-    
+```    
 ###安装完成。
 
 ####开发阶段: npm run dev
