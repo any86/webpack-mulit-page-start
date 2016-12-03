@@ -1,6 +1,6 @@
 #基于webpack的多页脚手架
 ###推荐使用yarn来代替npm, 因为速度快!
-###安装: 
+####安装: 
 ```javascript
 yarn install
 ```
