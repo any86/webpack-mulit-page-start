@@ -26,6 +26,11 @@ var plugins = [
     new webpack.DefinePlugin({
         ENV: 'prod',
         CODE_ENV: 1
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
     })
 ];
 

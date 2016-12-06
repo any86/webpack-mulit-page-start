@@ -4,7 +4,7 @@ module.exports = {
 	        components: ['header', 'banner', 'footer'],
 	    },
 	    list: {
-	        components: ['header','list', 'footer']
+	        components: ['header','list']
 	    }		
 	},
 	cdn: {
