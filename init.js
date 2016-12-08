@@ -39,11 +39,11 @@ var entry = (view_config) => {
         var file_path_noext = 'src/components/' + opts.name + '/' + opts.name;
 
         if (!fs.existsSync(file_path_noext + '.html')) {
-            fs.writeFileSync(file_path_noext + '.html', '<!--'+opts.name+'组件的html-->');
+            fs.writeFileSync(file_path_noext + '.html', '<!--'+opts.name+'组件的html-->'+_rn+'<div class="'+ opts.name +'">'+_rn+_rn+'</div>');
         }
 
         if (!fs.existsSync(file_path_noext + '.scss')) {
-            fs.writeFileSync(file_path_noext + '.scss', '//'+opts.name+'组件的scss');
+            fs.writeFileSync(file_path_noext + '.scss', '//'+opts.name+'组件的scss'+_rn+'.'+opts.name+'{}');
         }
 
         var js_str = 'module.exports = function(){' + _rn + '   // 写'+opts.name+'组件的js代码' +_rn+ '}';

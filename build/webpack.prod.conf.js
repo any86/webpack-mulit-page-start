@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -22,7 +23,7 @@ var plugins = [
     // new webpack.optimize.OccurrenceOrderPlugin(), 
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('css/[name].css'),
+    new ExtractTextPlugin('css/[name].min.css'),
     new webpack.DefinePlugin({
         ENV: 'prod',
         CODE_ENV: 1
@@ -56,14 +57,15 @@ module.exports = {
     output: {
         path: path.join(__dirname, '../dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
         publicPath: '../../dist/', //模板、样式、脚本、图片等资源对应的server上的路径
-        filename: 'js/[name].js', //每个页面对应的主js的生成配置
+        filename: 'js/[name].min.js', //每个页面对应的主js的生成配置
         chunkFilename: 'js/[id].chunk.js' //chunk生成的配置
     },
+    devtool: "source-map", 
     module: {
         loaders: [
             { test: /\.js?$/, loaders: ['babel'], exclude: /node_modules/ },
-            { test: /\.scss$/i, loader: ExtractTextPlugin.extract(['css', 'sass']) },
-            { test: /\.css$/i, loader: ExtractTextPlugin.extract(['css']) }, {
+            { test: /\.scss$/i, loader: ExtractTextPlugin.extract(['css?modules?sourceMap', 'sass?sourceMap', 'postcss']) },
+            { test: /\.css$/i, loader: ExtractTextPlugin.extract(['css?modules?sourceMap', 'postcss']) }, {
                 test: /\.json$/,
                 loader: 'json'
             }, {
@@ -85,6 +87,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    postcss: function() {
+        return [require('autoprefixer')({ browsers: ['last 2 versions'] })];
     },
     plugins: plugins
 };
