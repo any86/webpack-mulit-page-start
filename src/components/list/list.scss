@@ -1,0 +1,12 @@
+//list组件的scss
+.list {
+    border-right: 10px solid #c21;
+    .a {
+        background: #69c;
+        margin: 15px;
+        color: #fff;
+    }
+    .a.b {
+        color: #fc0;
+    }
+}
