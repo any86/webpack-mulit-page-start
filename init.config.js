@@ -1,7 +1,7 @@
 module.exports = {
 	view: {
 	    index: {
-	        components: ['server_btn_group'],
+	        components: ['list'],
 	    },
 	},
 	cdn: {
