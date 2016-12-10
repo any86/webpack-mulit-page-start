@@ -21,7 +21,6 @@ var plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
     // Webpack 2.0 fixed this mispelling 
     // new webpack.optimize.OccurrenceOrderPlugin(), 
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('css/[name].min.css'),
     new webpack.DefinePlugin({
