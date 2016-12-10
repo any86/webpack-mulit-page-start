@@ -60,10 +60,10 @@ module.exports = {
             exclude: /node_modules/
         }, {
             test: /\.scss$/,
-            loader: "style!css!sass"
+            loader: "style!css?modules!sass"
         }, {
             test: /\.css$/,
-            loader: "style!css"
+            loader: "style!css?modules"
         }, {
             test: /\.json$/,
             loader: 'json'

@@ -10,17 +10,12 @@
    <title>index</title>
    <script>
 var _Data = {
-header: ${JSON.stringify(require('../components/header/header.in.html.js')())},
-banner: ${JSON.stringify(require('../components/banner/banner.in.html.js')())},
-footer: ${JSON.stringify(require('../components/footer/footer.in.html.js')())},
+server_btn_group: ${JSON.stringify(require('../components/server_btn_group/server_btn_group.in.html.js')())},
 }
 
 </script>
 </head>
 <body>
-    ${require('../components/header/header.html')}
-    ${require('../components/banner/banner.html')}
-    ${require('../components/footer/footer.html')}
-   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
-   <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.css"></script></body>
+    ${require('../components/server_btn_group/server_btn_group.html')}
+   <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script></body>
 </html>
