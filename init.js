@@ -39,7 +39,7 @@ var entry = (view_config) => {
         var file_path_noext = 'src/components/' + opts.name + '/' + opts.name;
 
         if (!fs.existsSync(file_path_noext + '.html')) {
-            fs.writeFileSync(file_path_noext + '.html', '<!--'+opts.name+'组件的html-->'+_rn+'<div class="'+ opts.name +'">'+_rn+_rn+'</div>');
+            fs.writeFileSync(file_path_noext + '.html', '<!--'+opts.name+'组件的html-->'+_rn+'<div class="component-'+ opts.name +'">'+_rn+_rn+'</div>');
         }
 
         if (!fs.existsSync(file_path_noext + '.scss')) {
