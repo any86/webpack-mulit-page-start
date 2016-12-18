@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .warp{height: 500px;width: 300px;overflow: scroll;}
+    .a {
+        height: 400px;
+        width: 400px;
+        background: #f10;
+    }
+    
+    .b {
+        height: 400px;
+        width: 400px;
+        background: #010;
+        margin-top: 100px;
+    }
+    
+    .c {
+        height: 400px;
+        width: 400px;
+        background: #67c;
+        margin-top: 100px;
+        margin-bottom: 1000px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="warp" id="warp">
+        <div id="a" class="a">A</div>
+        <div id="b" class="b">B</div>
+        <div id="c" class="c">C</div>
+        <textarea name="" id="d" cols="30" rows="10"></textarea>
+    </div>
+    <script type="text/javascript">
+    var _dom = {
+        scrollTop: function() {
+
+        }
+    }
+
+
+
+    document.documentElement.onclick = function() {
+        // var v = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+        var v = document.getElementById('warp').scrollTop
+        console.log(v);
+    }
+    </script>
+</body>
+
+</html>
