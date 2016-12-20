@@ -1,8 +1,11 @@
 //list组件的scss
+*{padding: 0;margin: 0;}
+.long{width: 2000px;height: 30px;background: #9c3;}
 .component-list{background: #eee;
-	.warp{height:1000px;width:300px;overflow:scroll;border:2px solid #ccc;
-		.a{height:500px;width:400px;background:#f10;}
-		.b{height:500px;width:400px;background:#010;margin-top:100px;}
-		.c{height:500px;width:400px;background:#67c;margin-top:100px;margin-bottom:1000px;}
+	.warp{height:1000px;width:320px;overflow:scroll;border:2px solid #ccc;padding: 15px;margin:20px;
+		.a{height:500px;width:400px;background:#f10;padding: 15px;margin:10px;}
+		.b{height:500px;width:400px;background:#010;margin-top:100px;padding: 15px;margin:10px;}
+		.c{height:500px;width:400px;background:#67c;margin-top:100px;padding: 15px;margin:10px;}
 	}
+
 }
