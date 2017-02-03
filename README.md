@@ -32,7 +32,8 @@ module.exports = {
 node init
 
 ```    
-`目录
+`目录(node init生成的)`
+```
 src
     commponents
     js
@@ -40,7 +41,7 @@ src
     view
     font
     vendor
-
+```
 
 
 ####至此，安装完成。   
