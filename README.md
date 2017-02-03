@@ -26,11 +26,11 @@ module.exports = {
  
 
 
-###第3步，运行初始化命令, node init  
+###第3步，运行初始化命令, node init ,自动生成目录
 
-    自动生成项目目录结构:
+```   
+node init
 
-```
 src
     commponents
     js
