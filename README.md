@@ -30,10 +30,9 @@ module.exports = {
 
 ```   
 node init
-
 ```    
 
-####目录(node init生成的)
+####目录(node init生成的):
 
 ```
 src
