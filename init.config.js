@@ -1,8 +1,11 @@
 module.exports = {
 	view: {
 	    index: {
-	        components: ['list'],
+	        components: ['list']
 	    },
+	    detail: {
+	    	components: ['artcle']
+	    }
 	},
 	cdn: {
 		css: [],
