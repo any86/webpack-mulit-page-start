@@ -60,7 +60,7 @@ src
 
 #### 注意说明：
 
-1. view代表每个页面   
+view代表每个页面   
 
 components代表当前页面引入了那些组件(组件包含html/js/scss)   
 
