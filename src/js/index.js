@@ -1,2 +1,3 @@
-require('../scss/index.scss');
-require('../components/list/list.js')();
+require('../css/index.scss');
+const obj  = {a:1,b:2};
+console.log({c:3,...obj});
