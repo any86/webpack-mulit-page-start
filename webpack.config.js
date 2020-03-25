@@ -11,7 +11,7 @@ module.exports = {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: 'assets/css/[name].css',
-            chunkFilename: 'assets/css/[id].css',
+            chunkFilename: 'assets/css/[id].css'
         }),
         new HtmlWebpackPlugin({
             chunks: ['index'],
@@ -41,8 +41,12 @@ module.exports = {
             test: /\.s[ac]ss$/i,
             use: [
                 process.env.NODE_ENV === 'development' ?
-                'style-loader' :
-                MiniCssExtractPlugin.loader,
+                'style-loader' : {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../../'
+                    }
+                },
                 // Translates CSS into CommonJS
                 'css-loader',
                 // Compiles Sass to CSS
@@ -51,8 +55,9 @@ module.exports = {
         }, {
             test: /\.(png|svg|jpg|gif)$/,
             use: {
-                loader: 'file-loader',
+                loader: 'url-loader',
                 options: {
+                    limit: 8192,
                     name: 'assets/img/[name].[ext]',
                 }
             }
@@ -62,6 +67,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "assets/js/[name].js",
-        publicPath: "./"
+        // publicPath: "./"
     }
 };
