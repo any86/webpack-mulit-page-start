@@ -1,5 +1,3 @@
 require('../css/index.scss');
-import Vue from 'vue';
-console.log(Vue)
-const obj  = {a:1,b:2};
+const obj  = {a:1,b:222};
 console.log({c:3,...obj});

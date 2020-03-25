@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-console.warn(path.resolve(__dirname, './src/view/detail.html'))
 module.exports = {
     entry: {
         index: './src/js/index.js',
@@ -17,12 +16,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks: ['index'],
             filename: 'index.html',
-            template: path.resolve(__dirname, './src/view/index.html')
+            template: path.resolve(__dirname, '../src/view/index.html')
         }),
         new HtmlWebpackPlugin({
             chunks: ['detail'],
             filename: 'detail.html',
-            template: path.resolve(__dirname, './src/view/detail.html')
+            template: path.resolve(__dirname, '../src/view/detail.html')
         })
     ],
     module: {

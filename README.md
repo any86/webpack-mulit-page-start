@@ -74,3 +74,7 @@ module.exports = {
     }
 };
 ```
+
+## 参考
+HTML热加载
+https://blog.csdn.net/qq1073830130/article/details/91882929
