@@ -26,6 +26,9 @@ module.exports = {
     ],
     module: {
         rules: [{
+            test: /\.html$/i,
+            loader: 'html-loader'
+        }, {
             test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
@@ -45,6 +48,14 @@ module.exports = {
                 // Compiles Sass to CSS
                 'sass-loader',
             ],
+        }, {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: 'assets/img/[name].[ext]',
+                }
+            }
         }, ]
     },
 
